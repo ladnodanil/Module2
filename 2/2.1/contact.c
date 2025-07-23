@@ -7,25 +7,25 @@ int personCount = 0;
 void PrintContactInfo(const ContactInfo *const info)
 {
     if (info->PhoneNumber[0] != '\0')
-        printf("Номер телефона: %s\n", info->PhoneNumber);
+        printf("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %s\n", info->PhoneNumber);
     if (info->Email[0] != '\0')
-        printf("Почта: %s\n", info->Email);
+        printf("пїЅпїЅпїЅпїЅпїЅ: %s\n", info->Email);
     if (info->Link[0] != '\0')
-        printf("Ссылка на соцсеть: %s\n", info->Link);
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %s\n", info->Link);
 }
 
 void PrintPerson(const Person *const person)
 {
     if (person->LastName[0] != '\0')
-        printf("Фамилия: %s\n", person->LastName);
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %s\n", person->LastName);
     if (person->FirstName[0] != '\0')
-        printf("Имя: %s\n", person->FirstName);
+        printf("пїЅпїЅпїЅ: %s\n", person->FirstName);
     if (person->Patronymic[0] != '\0')
-        printf("Отчество: %s\n", person->Patronymic);
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %s\n", person->Patronymic);
     if (person->WorkPlace[0] != '\0')
-        printf("Раб. место: %s\n", person->WorkPlace);
+        printf("пїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ: %s\n", person->WorkPlace);
     if (person->Post[0] != '\0')
-        printf("Должность: %s\n", person->Post);
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: %s\n", person->Post);
 
     PrintContactInfo(&person->contactInfo);
 }
@@ -77,45 +77,47 @@ void Input(Person *person)
     char workPlace[MAX_LEN];
     char post[MAX_LEN];
 
-    do{
-        printf("Введите фамилию: ");
+    do
+    {
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
         fgets(lastName, MAX_LEN, stdin);
         remove_newline(lastName);
         if (lastName[0] == '\0')
         {
-            printf("Фамилия не может быть пустой! Попробуйте ещё раз.\n");
+            printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ.\n");
         }
     } while (lastName[0] == '\0');
 
-    do{
-        printf("Введите имя: ");
+    do
+    {
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ: ");
         fgets(firstName, MAX_LEN, stdin);
         remove_newline(firstName);
         if (firstName[0] == '\0')
         {
-            printf("Имя не может быть пустым! Попробуйте ещё раз.\n");
+            printf("пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ.\n");
         }
     } while (firstName[0] == '\0');
 
-    printf("Введите место работы: ");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ");
     fgets(workPlace, MAX_LEN, stdin);
     remove_newline(workPlace);
 
-    printf("Введите должность: ");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
     fgets(post, MAX_LEN, stdin);
     remove_newline(post);
 
     PersonInit(person, lastName, firstName, patronymic, workPlace, post);
 
-    printf("Введите номер телефона: ");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ");
     fgets(person->contactInfo.PhoneNumber, MAX_LEN, stdin);
     remove_newline(person->contactInfo.PhoneNumber);
 
-    printf("Введите email: ");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ email: ");
     fgets(person->contactInfo.Email, MAX_LEN, stdin);
     remove_newline(person->contactInfo.Email);
 
-    printf("Введите ссылку: ");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: ");
     fgets(person->contactInfo.Link, MAX_LEN, stdin);
     remove_newline(person->contactInfo.Link);
 }
@@ -127,36 +129,38 @@ void AddPersons(Person *persons, Person *newPerson)
         Input(newPerson);
         persons[personCount] = *newPerson;
         personCount++;
-        printf("Успешно!\n");
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n");
     }
     else
     {
-        printf("Лимит пользователей\n");
+        printf("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n");
     }
 }
 
 void EditPersons(Person *persons, const int index)
 {
-    if (index < 0 || index >= personCount) {
-        printf("Некорректный индекс для изменения!\n");
+    if (index < 0 || index >= personCount)
+    {
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n");
         return;
     }
-    printf("Редактирование контакта №%d:\n", index + 1);
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ%d:\n", index + 1);
     Input(&persons[index]);
-    printf("Контакт успешно изменён!\n");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n");
 }
 
 void DeletePersons(Person *persons, const int index)
 {
-    if (index < 0 || index >= personCount) {
-        printf("Некорректный индекс для удаления!\n");
+    if (index < 0 || index >= personCount)
+    {
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n");
         return;
     }
     for (int i = index; i < personCount; i++)
     {
-        persons[i] = persons[i+1];
+        persons[i] = persons[i + 1];
     }
-    
+
     personCount--;
 }
 
@@ -164,7 +168,7 @@ void PrintAllPersons(const Person *persons)
 {
     for (int i = 0; i < personCount; i++)
     {
-        printf("\nКонтакт № %d\n", i + 1);
+        printf("\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ %d\n", i + 1);
         PrintPerson(&persons[i]);
         printf("\n");
     }
